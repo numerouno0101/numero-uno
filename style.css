@@ -572,102 +572,165 @@ section h2 {
 ========================================================= */
 
 .projects {
-    background: white;
+    background: #ffffff;
 }
 
 .section-description {
     max-width: 650px;
-
-    margin: 0 auto 50px;
-
+    margin: 0 auto 55px;
     text-align: center;
-
     color: var(--muted);
+    font-size: 17px;
 }
 
 .project-container {
     max-width: 1150px;
-
     margin: auto;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
+    gap: 28px;
 }
 
 .project {
-    background: white;
-
+    background: #ffffff;
     overflow: hidden;
-
-    border-radius: 15px;
+    border-radius: 18px;
 
     border: 1px solid var(--border);
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.07);
 
-    transition: 0.3s ease;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
 
 .project:hover {
-    transform: translateY(-7px);
+    transform: translateY(-10px);
 
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(37, 99, 235, 0.35);
+
+    box-shadow:
+        0 22px 50px rgba(37, 99, 235, 0.16);
 }
 
+/* PROJECT IMAGE */
+
 .project-image {
-    height: 220px;
+    height: 230px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     position: relative;
+    overflow: hidden;
 
     color: white;
 
     font-weight: 900;
-
     letter-spacing: 2px;
-
-    overflow: hidden;
 }
 
+/* IMAGE SHINE EFFECT */
+
+.project-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    top: -70px;
+    right: -50px;
+
+    transition: 0.5s ease;
+}
+
+.project:hover .project-image::before {
+    transform: scale(1.5);
+}
+
+/* IMAGE GLOW */
+
+.project-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+/* PROJECT BACKGROUNDS */
+
 .website-image {
-    background: linear-gradient(
-        135deg,
-        #2563eb,
-        #172554
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #172554
+        );
 }
 
 .portfolio-image {
-    background: linear-gradient(
-        135deg,
-        #7c3aed,
-        #312e81
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #312e81
+        );
 }
 
 .dashboard-image {
-    background: linear-gradient(
-        135deg,
-        #0891b2,
-        #164e63
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #0891b2,
+            #164e63
+        );
 }
+
+/* IMAGE TEXT */
 
 .project-image span {
     position: relative;
 
-    z-index: 2;
+    z-index: 3;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(5px);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
 }
 
+/* PROJECT CONTENT */
+
 .project-content {
-    padding: 28px;
+    padding: 30px;
 }
 
 .project-category {
@@ -677,13 +740,13 @@ section h2 {
 
     font-weight: 900;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
 }
 
 .project-content h3 {
-    margin: 8px 0 10px;
+    margin: 9px 0 12px;
 
-    font-size: 23px;
+    font-size: 24px;
 
     color: var(--dark);
 }
@@ -691,13 +754,26 @@ section h2 {
 .project-content p {
     color: var(--muted);
 
-    margin-bottom: 18px;
+    line-height: 1.7;
+
+    margin-bottom: 20px;
 }
 
 .project-content a {
+    display: inline-flex;
+    align-items: center;
+
     color: var(--blue);
 
-    font-weight: 700;
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.project-content a:hover {
+    color: var(--blue-dark);
+
+    transform: translateX(5px);
 }
 
 /* =========================================================
