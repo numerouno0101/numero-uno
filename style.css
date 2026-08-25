@@ -158,83 +158,10 @@ nav {
     justify-content: center;
 
     text-align: center;
+
     color: white;
 
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(37,99,235,0.4),
-            transparent 45%
-        ),
-        linear-gradient(
-            135deg,
-            #05070c,
-            #111827,
-            #172554
-        );
-}
-
-.hero-tag {
-    color: var(--blue-light);
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    max-width: 900px;
-    font-size: clamp(42px, 7vw, 78px);
-    line-height: 1.05;
-    margin-bottom: 25px;
-}
-
-.hero-text {
-    max-width: 700px;
-    color: #cbd5e1;
-    font-size: 18px;
-    margin-bottom: 35px;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.primary-button,
-.secondary-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 14px 25px;
-    border-radius: 8px;
-
-    font-weight: 700;
-    transition: 0.3s ease;
-}
-
-.primary-button {
-    background: var(--blue);
-    color: white;
-}
-
-.primary-button:hover {
-    background: #1d4ed8;
-    transform: translateY(-3px);
-}
-
-.secondary-button {
-    color: white;
-    border: 1px solid rgba(255,255,255,0.35);
-    background: rgba(255,255,255,0.06);
-}
-
-.secondary-button:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-3px);
+    background: #0f172a;
 }
 
 /* =========================================================
