@@ -161,7 +161,48 @@ nav {
 
     color: white;
 
-    background: #0f172a;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(37, 99, 235, 0.35),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #080b12 0%,
+            #111827 55%,
+            #172554 100%
+        );
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(37, 99, 235, 0.12);
+
+    filter: blur(80px);
+
+    top: -200px;
+    left: -150px;
+
+    pointer-events: none;
+}
+
+.hero h1,
+.hero-tag,
+.hero-text,
+.hero-buttons {
+    position: relative;
+    z-index: 2;
 }
 
 /* =========================================================
