@@ -1,6 +1,6 @@
 /* =========================================================
    NUMERO UNO WEB STUDIO
-   COMPLETE FRESH STYLE.CSS
+   CLEAN COMPLETE STYLE
 ========================================================= */
 
 * {
@@ -17,14 +17,15 @@ html {
     --blue: #2563eb;
     --blue-light: #60a5fa;
     --blue-dark: #1e3a8a;
-    --black: #050816;
+    --black: #05070c;
     --dark: #0f172a;
+    --dark-2: #172554;
     --white: #ffffff;
-    --light: #f5f7fb;
+    --light: #f4f7fb;
     --text: #1f2937;
     --muted: #64748b;
-    --border: #e2e8f0;
-    --green: #25D366;
+    --border: #dbe2ea;
+    --whatsapp: #25d366;
 }
 
 body {
@@ -44,17 +45,17 @@ a {
 ========================================================= */
 
 nav {
-    width: 100%;
     min-height: 82px;
+    width: 100%;
     padding: 14px 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(5, 8, 22, 0.98);
+    background: rgba(5, 7, 12, 0.98);
     position: sticky;
     top: 0;
     z-index: 9999;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
 }
 
 /* LOGO */
@@ -72,27 +73,26 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 14px;
+
+    background: linear-gradient(
+        145deg,
+        #93c5fd,
+        #3b82f6,
+        #2563eb,
+        #172554
+    );
+
     color: white;
     font-size: 14px;
     font-weight: 900;
     letter-spacing: 1px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #93c5fd,
-            #3b82f6,
-            #2563eb,
-            #172554
-        );
-
     box-shadow:
         inset 0 2px 4px rgba(255,255,255,0.5),
         inset 0 -7px 12px rgba(0,0,0,0.35),
         0 8px 22px rgba(37,99,235,0.45);
-
-    text-shadow: 0 2px 3px rgba(0,0,0,0.5);
 
     animation: n01Rotation 3s linear infinite;
 }
@@ -112,21 +112,11 @@ nav {
     font-size: 15px;
     font-weight: 800;
     letter-spacing: 1.5px;
-    white-space: nowrap;
 }
 
 /* =========================================================
-   MENU
+   NAV LINKS
 ========================================================= */
-
-.menu-button {
-    display: none;
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-}
 
 .nav-links {
     display: flex;
@@ -145,20 +135,699 @@ nav {
     color: var(--blue-light);
 }
 
+.menu-button {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero {
     min-height: 88vh;
+    padding: 100px 20px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     text-align: center;
-    padding: 100px 20px;
     color: white;
 
     background:
         radial-gradient(
-            circle at 
+            circle at 50% 30%,
+            rgba(37,99,235,0.4),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #05070c,
+            #111827,
+            #172554
+        );
+}
+
+.hero-tag {
+    color: var(--blue-light);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    max-width: 900px;
+    font-size: clamp(42px, 7vw, 78px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    max-width: 700px;
+    color: #cbd5e1;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 25px;
+    border-radius: 8px;
+
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.primary-button {
+    background: var(--blue);
+    color: white;
+}
+
+.primary-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+.secondary-button {
+    color: white;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.06);
+}
+
+.secondary-button:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-tag {
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+section h2 {
+    color: var(--dark);
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.15;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: white;
+}
+
+.about-intro {
+    max-width: 850px;
+    margin: 0 auto 18px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.about-features {
+    max-width: 1100px;
+    margin: 55px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.about-feature {
+    padding: 35px 30px;
+
+    background: var(--light);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    transition: 0.3s ease;
+}
+
+.about-feature:hover {
+    transform: translateY(-7px);
+    border-color: var(--blue-light);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.feature-number {
+    display: inline-block;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.about-feature h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.about-feature p {
+    color: var(--muted);
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe 0%,
+            #eff6ff 45%,
+            #e0e7ff 100%
+        );
+}
+
+.services h2 {
+    color: #0f172a;
+}
+
+.services-description {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+    color: #475569;
+    font-size: 17px;
+}
+
+.service-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service {
+    background: white;
+    padding: 35px 30px;
+
+    border-radius: 15px;
+    border: 1px solid #cbd5e1;
+
+    box-shadow: 0 10px 30px rgba(30,64,175,0.08);
+
+    transition: 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(37,99,235,0.18);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    margin-bottom: 22px;
+
+    background: var(--dark);
+    color: var(--blue-light);
+
+    font-weight: 900;
+}
+
+.service h3 {
+    font-size: 23px;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.service p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.service a {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+    background: white;
+}
+
+.section-description {
+    max-width: 650px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+    color: var(--muted);
+}
+
+.project-container {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project {
+    background: white;
+    overflow: hidden;
+
+    border-radius: 15px;
+    border: 1px solid var(--border);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+    transition: 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.website-image {
+    background: linear-gradient(135deg,#2563eb,#172554);
+}
+
+.portfolio-image {
+    background: linear-gradient(135deg,#7c3aed,#312e81);
+}
+
+.dashboard-image {
+    background: linear-gradient(135deg,#0891b2,#164e63);
+}
+
+.project-content {
+    padding: 28px;
+}
+
+.project-category {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.project-content h3 {
+    margin: 8px 0 10px;
+    font-size: 23px;
+    color: var(--dark);
+}
+
+.project-content p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.project-content a {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(37,99,235,0.25),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #05070c,
+            #111827,
+            #172554
+        );
+
+    color: white;
+}
+
+.contact-container {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 60px;
+    align-items: center;
+}
+
+.contact .section-tag {
+    text-align: left;
+    color: var(--blue-light);
+}
+
+.contact-heading h2 {
+    color: white;
+    text-align: left;
+}
+
+.contact-heading > p {
+    color: #cbd5e1;
+    font-size: 17px;
+}
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 25px;
+    padding: 14px 24px;
+
+    background: var(--whatsapp);
+    color: white;
+
+    border-radius: 8px;
+
+    font-weight: 800;
+
+    box-shadow: 0 8px 20px rgba(37,211,102,0.25);
+
+    transition: 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background: #1ebe5d;
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+form {
+    background: white;
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    color: var(--dark);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    padding: 13px 14px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,0.1);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+
+    border: none;
+    padding: 14px;
+
+    border-radius: 8px;
+
+    background: var(--blue);
+    color: white;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #05070c;
+    color: white;
+
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer h2 {
+    color: white;
+    margin-bottom: 8px;
+    font-size: 25px;
+}
+
+footer p {
+    color: #9ca3af;
+    margin: 5px 0;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        padding: 14px 25px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 0;
+
+        flex-direction: column;
+
+        background: var(--dark);
+
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 13px;
+    }
+
+    .about-features,
+    .service-container,
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact .section-tag,
+    .contact-heading h2 {
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        min-height: 72px;
+        padding: 10px 18px;
+    }
+
+    .logo-mark {
+        width: 46px;
+        height: 46px;
+        font-size: 13px;
+    }
+
+    .logo-text {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .hero {
+        min-height: 82vh;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 75px 20px;
+    }
+
+    section h2 {
+        font-size: 34px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    form {
+        padding: 25px 20px;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .logo-mark {
+        animation: none;
+    }
+
+    * {
+        transition-duration: 0.01ms !important;
+    }
+}
